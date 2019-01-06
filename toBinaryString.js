@@ -10,15 +10,21 @@ Count from 0 to 31 in binary with one hand: https://youtu.be/Bke95oWWZII
 
 Remainder division with the modulo operator % 
 
+https://www.rapidtables.com/convert/number/decimal-to-binary.html?x=13
 */
 
 function toBinaryString(number) {
-  binary = [];
-  if (number % 128 === 0) {
+  let x = number;
+  let result = "";
+  if (x === 0) return "0";
+  if (x === 1) return "1";
+  let mod = x / 2;
+  while (x > 0) {
+    result = `${(x % 2) + result}`;
+    x = Math.floor(x / 2);
   }
+  return result;
 }
-
-console.log(14 % 16);
 
 console.log(toBinaryString(0)); // <--- 0
 console.log(toBinaryString(1)); // <--- 1
