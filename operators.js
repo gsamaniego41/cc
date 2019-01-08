@@ -9,14 +9,41 @@ Hint: divide should drop the remainder.
 NOTE: the test suite will check to see if you are using the * / or % operators. This test will fail if you have commented out code within your functions.
  */
 
-function negCheck(num1, num2) {}
+function negCheck(num1, num2) {
+  // let product = multiply(num1, num2)
+  let arr = [false];
+  if (num1 < 0) {
+    arr[0] = !arr[0];
+    arr.push(-num1); // flips negative to positive
+  } else arr.push(num1);
+  if (num2 < 0) {
+    arr[0] = !arr[0];
+    arr.push(-num2); // flips negative to positive
+  } else arr.push(num2);
+  return arr;
+}
 
 function multiply(x, y) {
   const arr = negCheck(x, y);
+  let product = 0;
+  for (let i = 0; i < y; i++) {
+    product += x;
+  }
+  if (arr[0]) product = -product;
+  return product;
 }
 
 function divide(x, y) {
-  const arr = negCheck(x, y);
+  // const arr = negCheck(x, y);
+  // let quotient;
+  // let counter = 0
+  // for(let i = 0; i < y; i++){
+  //   quotient = x - y;
+  //   if(quotient > y){
+  //     counter++
+  //   }
+  // }
+  // return counter
 }
 
 function modulo(x, y) {
