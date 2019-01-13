@@ -30,21 +30,21 @@ const wilma = new Parent({
   homeTown: "Bedrock"
 });
 
-console.log(fred);
-console.log(fred.speak());
-console.log(wilma);
-console.log(wilma.speak());
-console.log(wilma.yabbaDabba());
+console.log("***** Parents *****");
+console.log("1.", fred);
+console.log("2.", fred.speak());
+console.log("3.", wilma);
+console.log("4.", wilma.speak());
 
 function Child(childAttributes) {
   Parent.call(this, childAttributes); // binding to Parent
-  this.isChild = childAttributes.isChild; // a special attribute to Child
+  this.isChild = true; // a special attribute to Child
 }
 
 Child.prototype = Object.create(Parent.prototype);
 Child.prototype.checkIfChild = function() {
   if (this.isChild) {
-    console.log(Parent.prototype);
+    console.log(this);
     return `My name is ${this.name} and I am a child object`;
   }
 };
@@ -57,7 +57,8 @@ const pebbles = new Child({
   isChild: true
 });
 
-console.log(pebbles);
-console.log(pebbles.speak());
-console.log(pebbles.checkIfChild());
-console.log(pebbles.yabbaDabba());
+console.log("***** Child *****");
+console.log("5.", pebbles);
+console.log("6.", pebbles.speak());
+console.log("7.", pebbles.checkIfChild());
+console.log("8.", pebbles.yabbaDabba());

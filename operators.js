@@ -34,16 +34,15 @@ function multiply(x, y) {
 }
 
 function divide(x, y) {
-  // const arr = negCheck(x, y);
-  // let quotient;
-  // let counter = 0
-  // for(let i = 0; i < y; i++){
-  //   quotient = x - y;
-  //   if(quotient > y){
-  //     counter++
-  //   }
-  // }
-  // return counter
+  const arr = negCheck(x, y);
+  let remainder = arr[1];
+  let answer = 0;
+  while (remainder >= arr[2]) {
+    answer += 1;
+    remainder -= arr[2];
+  }
+  if (arr[0]) answer = -answer;
+  return answer;
 }
 
 function modulo(x, y) {
