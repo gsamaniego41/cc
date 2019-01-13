@@ -47,6 +47,12 @@ function divide(x, y) {
 
 function modulo(x, y) {
   const arr = negCheck(x, y);
+  let remainder = arr[1];
+  while (remainder >= arr[2]) {
+    remainder -= arr[2];
+  }
+  if (x < 0) return -remainder;
+  return remainder;
 }
 
 console.log(negCheck(12, 34)); //   <--- [ false, 12, 34 ]
