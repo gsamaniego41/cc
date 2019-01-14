@@ -15,3 +15,21 @@ const reverseCase = str => {
 };
 
 console.log(reverseCase("HELLO world!")); // 'hello WORLD!'
+
+/* 
+Longer Version:
+function reverseCase(str) {
+  let split = str.split('');
+  console.log(split);
+  
+  let revCase = [];
+  split.forEach(char => {
+    if(char === char.toUpperCase()){
+      revCase.push(char.toLowerCase())
+    } else {
+      revCase.push(char.toUpperCase())
+    }
+  })
+  return revCase.join('')
+} 
+*/
