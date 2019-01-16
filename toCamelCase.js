@@ -8,8 +8,17 @@ toCamelCase("The_stealth_warrior")
 */
 
 const toCamelCase = str => {
-  return str.replace(/[-_]([a-z])/gi, (str, char) => char.toUpperCase());
+  return str.replace(/[-_]([a-z])/gi, (match, captured) =>
+    captured.toUpperCase()
+  );
 };
 
 console.log(toCamelCase("the-stealth-warrior")); // 'theStealthWarrior'
 console.log(toCamelCase("The_stealth_warrior")); // 'theStealthWarrior'
+
+/* 
+1. () is used to capture 
+2. match param - exact match, without g flag it will only find the first instance
+3. captured param - exact match between ()
+4. if there is a third param, it will return a number, that number is the index of where a match starts  
+*/
