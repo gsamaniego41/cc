@@ -17,8 +17,6 @@ function toBinaryString(number) {
   let x = number;
   let result = "";
   if (x === 0) return "0";
-  if (x === 1) return "1";
-  let mod = x / 2;
   while (x > 0) {
     result = `${(x % 2) + result}`;
     x = Math.floor(x / 2);

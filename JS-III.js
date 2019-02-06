@@ -73,7 +73,7 @@ function sumPetYears(arr, kind, multiply) {
   let sumYears = arr
     .filter(pet => pet.species === kind)
     .map(pet => pet.age * multiply)
-    .reduce((a, b) => a + b);
+    .reduce((accumulator, currentVal) => accumulator + currentVal);
   return `The combined ${kind}s' ages: ${sumYears}`;
 }
 
